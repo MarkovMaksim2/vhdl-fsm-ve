@@ -49,7 +49,7 @@ export function Flow() {
       overflow: "hidden"
     }}>
       <div style={{
-        width: '480px',
+        width: '520px',
         height: '100%',
         background: '#2e2e3e',
         color: 'white',
