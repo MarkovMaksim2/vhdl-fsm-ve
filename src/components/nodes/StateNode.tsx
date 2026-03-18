@@ -34,9 +34,6 @@ function StateNodeComponent({ data, selected, dragging }: NodeProps<StateNodeDat
         }}
       >
         <div style={{ fontWeight: "bold" }}>{data.label}</div>
-        <div style={{ fontSize: "12px", marginTop: "6px", opacity: 0.7 }}>
-          {data.code || "no logic"}
-        </div>
 
         <Handle
           type="source"

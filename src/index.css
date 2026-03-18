@@ -24,8 +24,11 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
 
-  @media (max-width: 1024px) {
+/* Медиа-запросы должны быть на верхнем уровне */
+@media (max-width: 1024px) {
+  :root {
     font-size: 16px;
   }
 }
@@ -50,20 +53,23 @@
   }
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 #root {
-  width: 1126px;
+  width: 100%;  /* Изменено с 1126px на 100% */
   max-width: 100%;
-  margin: 0 auto;
+  margin: 0;
+  padding: 0;
   text-align: center;
-  border-inline: 1px solid var(--border);
-  min-height: 100svh;
+  border: none;  /* Убираем border-inline */
+  min-height: 100vh;  /* или 100svh, но vh более совместимо */
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-}
-
-body {
-  margin: 0;
 }
 
 h1,
@@ -77,20 +83,29 @@ h1 {
   font-size: 56px;
   letter-spacing: -1.68px;
   margin: 32px 0;
-  @media (max-width: 1024px) {
+}
+
+/* Медиа-запросы для заголовков на верхнем уровне */
+@media (max-width: 1024px) {
+  h1 {
     font-size: 36px;
     margin: 20px 0;
   }
 }
+
 h2 {
   font-size: 24px;
   line-height: 118%;
   letter-spacing: -0.24px;
   margin: 0 0 8px;
-  @media (max-width: 1024px) {
+}
+
+@media (max-width: 1024px) {
+  h2 {
     font-size: 20px;
   }
 }
+
 p {
   margin: 0;
 }
@@ -108,4 +123,9 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+}
+
+/* Если нужна граница, используйте border вместо border-inline */
+#root {
+  border: none; /* или 1px solid var(--border) если нужна граница */
 }

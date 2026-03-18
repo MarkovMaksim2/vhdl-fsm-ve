@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import ReactFlow, { Background, Controls, useReactFlow } from "reactflow";
+import ReactFlow, { Background, Controls } from "reactflow";
 import type { Node, Edge, Connection } from "reactflow";
 import "reactflow/dist/style.css";
 import { StateNode } from "./nodes/StateNode";
@@ -18,7 +18,6 @@ export function FlowCanvas({
   addNode: (pos?: { x: number; y: number }) => void;
 }) {
   const projectRef = useRef<(p: { x: number; y: number }) => { x: number; y: number }>(null);
-  // const { project } = useReactFlow();
 
   const onPaneClick = (event: React.MouseEvent) => {
     try {
